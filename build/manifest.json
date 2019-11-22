@@ -1,0 +1,10 @@
+{
+  "name": "Create React App Sample",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description" : "Base Level Extension",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-03JDnyDLZHHfh+skViggrHb3jeLoQ/PPfAaqPXyR6VU='; object-src 'self'"
+}
