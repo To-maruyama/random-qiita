@@ -5,6 +5,7 @@ import { createModule, DefaultTypelessProvider } from 'typeless';
 import QiitaRepository from './repository/Qiita'
 import Item from './models/Item'
 import {Tags} from './models/Tag'
+import {ItemList} from './ItemList'
 
 /* == Module Interface == */
 
@@ -58,37 +59,9 @@ useModule
     state.items = items;
   });
 
-/* == Use Module in React == */
-
-export function Counter() {
-  // load epic and reducer
-  useModule();
-
-  // wrap actions with `dispatch`
-  // get state from store
-  const { items, tags } = getQiitaState.useState();
-
-  return (
-    <div>
-    <div>
-      検索タグ<h3>{tags.idsString}</h3>
-    </div>
-    <div>
-      <ul>
-        
-        {items.map((x, index) => 
-          <li><a href={x.url}>{x.title}</a></li>
-        )}
-        
-      </ul>
-    </div>
-    </div>
-  );
-}
-
 ReactDOM.render(
   <DefaultTypelessProvider>
-    <Counter />
+    <ItemList />
   </DefaultTypelessProvider>,
   document.getElementById('app')
 );

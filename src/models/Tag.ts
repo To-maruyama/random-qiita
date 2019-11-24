@@ -1,8 +1,8 @@
 export default class Tag {
     id: string;
 
-    constructor(obj: any) {
-      this.id = obj.id
+    constructor(str: string) {
+      this.id = str
     }
 }
 
@@ -14,7 +14,7 @@ export class Tags {
     }
 
     get query(): string {
-      return this.ids.map(x => `tag:${x.id}`).join(' OR ')
+      return this.ids.map(x => `tag:${x.id}`).join(' stocks:>10 OR ') + 'stocks:>10'
     }
 
     get idsString(): string {

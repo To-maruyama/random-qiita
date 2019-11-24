@@ -27,7 +27,7 @@ export default class QiitaRepository {
             "sort": "count",
           }
         }
-    ).then((response) => { return new Tags(response.data.map((x: any) => new Tag(x)))}
+    ).then((response) => { return new Tags(response.data.map((x: any) => new Tag(x.id)))}
     )
   }
 }
